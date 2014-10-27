@@ -1,0 +1,14 @@
+<%= form_for(@post_attachment) do |f| %>
+<%= image_tag @post_attachment.avatar %>
+  <div class="field">
+    <%= f.label :post_id %><br>
+    <%= f.number_field :post_id %>
+  </div>
+  <div class="field">
+    <%= f.label :avatar %><br>
+    <%= f.file_field :avatar %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

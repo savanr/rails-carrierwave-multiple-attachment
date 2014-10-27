@@ -1,0 +1,27 @@
+<h1>Listing post_attachments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Post</th>
+      <th>Avatar</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @post_attachments.each do |post_attachment| %>
+      <tr>
+        <td><%= post_attachment.post_id %></td>
+        <td><%= post_attachment.avatar %></td>
+        <td><%= link_to 'Show', post_attachment %></td>
+        <td><%= link_to 'Edit', edit_post_attachment_path(post_attachment) %></td>
+        <td><%= link_to 'Destroy', post_attachment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post attachment', new_post_attachment_path %>
